@@ -6,13 +6,13 @@
 
  ### ORGANIZACIÓN DE MÓDULO 
  
- - [Sesión 1](): 
- - [Sesión 2](): 
- - [Sesión 3](): 
- - [Sesión 4](): 
- - [Sesión 5](): 
- - [Sesión 6](): 
- - [Sesión 7](): 
- - [Sesión 8]():
+ - [Sesión 1: Gestión de base de datos](): 
+ - [Sesión 2: Multi Hilos y procesos concurrentes](): 
+ - [Sesión 3: Programación Funcional](): 
+ - [Sesión 4: Procesos asincronos](): 
+ - [Sesión 5: Stream Reactivos](): 
+ - [Sesión 6: Clases Genéricas](): 
+ - [Sesión 7: Microservicios](): 
+ - [Sesión 8: Buenas Practicas]():
 
 
