@@ -6,7 +6,7 @@
 - Crear un hilo demonio
 
 ### Requisitos
-- JDK 8 o superior
+- JDK 12
 - IDE de tu preferencia
 
 ### Desarrollo
