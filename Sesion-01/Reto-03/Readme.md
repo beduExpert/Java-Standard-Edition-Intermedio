@@ -1,29 +1,26 @@
- 
+## Reto 3
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+En el Ejemplo 3 creaste un QueryMethod para la búsqueda de equipo por nombre. En este reto crearás un método para buscar un partido por el nombre de los partidos.
 
-### OBJETIVO 
-
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+ 1. Crea el archivo de prueba tal como hiciste en el Ejemplo 3. En este caso tendrás que agregar ambos repositorios para poder hacer el setup completo.</li>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+ ![Prueba](img/figura01.png)
 
-![imagen](https://picsum.photos/200/300)
+ deberás agregar el repositorio de partidos a la prueba de equipos, ya que no podemos garantizar el orden en que se ejecutan las pruebas y por las restricciones de llave foránea podríamos tener problemas al reiniciar la tabla. Este tipo de comportamiento de uso común es un excelente candidato para crear una clase de soporte).
 
+ 2. Crea el QueryMethod:
+ 
+  ![Query method](img/figura02.png)
+
+Como puedes ver, podemos definir criterios de búsqueda en objetos anidados. ¿Puedes definir la sentencia SQL equivalente?
+
+  <p>
+  Para validar que todo esté correcto, ejecuta la prueba con maven.
+  </p>
+
+
+</details>
