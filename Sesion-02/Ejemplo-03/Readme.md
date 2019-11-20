@@ -4,7 +4,7 @@
 - Conocer la API Executors mediante la creación de un Pool que contenga varios Thread
 
 ### Requisitos
-- JDK 8 o superior
+- JDK 12
 - IDE de tu preferencia
 
 ### Desarrollo
