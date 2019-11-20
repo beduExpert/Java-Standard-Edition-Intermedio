@@ -4,7 +4,7 @@
 - Familiarizarse con la interfaz Runnable, el único método que define y la forma en que se incorpora a un Thread para su ejecución
 
 ### Requisitos
-- JDK 8 o superior
+- JDK 12 o superior
 - IDE de tu preferencia
 
 ### Desarrollo
