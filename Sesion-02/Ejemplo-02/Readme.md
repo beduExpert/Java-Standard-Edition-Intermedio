@@ -38,7 +38,7 @@ private void mostrarInformacion() {
 }
 ```
 
-6. Por último, crearemos 2 objetos `MiRunnable`` en el método **main** de nuestra aplicación, uno de ellos será un hilo de usuario y el segundo será un hilo demonio:
+6. Por último, crearemos 2 objetos `MiRunnable` en el método **main** de nuestra aplicación, uno de ellos será un hilo de usuario y el segundo será un hilo demonio:
 ```java
 public static void main(String[] args) {
     MiHilo hilo1 = new MiHilo("Uno");
