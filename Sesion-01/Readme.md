@@ -8,8 +8,20 @@
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
+- Creación y configuración de una base de datos y conexión mediante Spring Data JPA
 
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+
+
+- Creación de entidades y repositorios
+
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	
+	
+- Pruebas de integración a reposotorios con JUnit
+
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
 
