@@ -1,28 +1,57 @@
+## Ejercicio 01
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+**Prerequisitos**
 
-## Titulo del Ejemplo
+* Tener instalado MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
+* Tener instalado Apache Maven
+* Tener instalado el JDK 12
 
-### OBJETIVO
+**Objetivo** 
 
-- Lo que esperamos que el alumno aprenda
+- Hacer uso del Spring Data para configurar la conexión a la base de datos
 
-#### REQUISITOS
+#### Preparativos
+1. Clona el proyecto del ejercicio - [Código](codigo)
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+2. En la ruta **src/main/resouces/sql** se encuentran los archivos de inicialización de la base de datos. Ejecuta desde una línea de comandos:
 
-#### DESARROLLO
+```bash
+  mysql -u root -p < usuario_y_esquema.sql
+```
+Esto creará el esquema (vacío) **BEDU_JSE2** y un par de usuarios: **usuario** y **admin** con contraseñas _PASSWD_ y _ADMIN_PWD_ respectivamente.
 
-Agrega las instrucciones generales del ejemplo o reto
+3. Ejecuta la siguiente instrucción (Nota que esta vez se ejecuta con el usuario admin que acabamos de crear)
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-![imagen](https://picsum.photos/200/300)
+```bash
+  mysql -u admin -p < tablas.sql
+```
+Esto creará las tablas necesarias para el ejemplo.
 
 
+##### Sobre Sprig Boot 
+
+El ejemplo está hecho con Spring Boot, una herramienta de Spring que permite ejecutar una aplicación web sin un servidor de aplicaciones externo. El funcionamiento a profundidad de Spring Boot queda fuera del alcance de este curso, pero se recomienda su estudio. 
+
+Se puede inicializar una aplicación de Spring Boot con Maven usando el siguiente comando
+
+```bash
+    mvn spring-boot:run
+```
+    
+### Procedimiento
+
+1. Inicia la aplicación con Maven. Aparecerá un error ya que la conexión a la base de datos no ha sido configurada y por lo tanto no se puede inicializar el objeto **DataSource**
+
+   ![Error DB](img/figura01.png)
+
+2. Abre el archivo **src/main/resources/application.properties**. Ahí escribe los valores para la conexión a la base de datos:
+
+		spring.datasource.url=jdbc:mysql://localhost/BEDU_JSE2
+		spring.datasource.username=usuario
+		spring.datasource.password=PASSWD
+
+   ![Configuración DB](img/figura02.png)
+
+3. Vuelve a ejecutar la aplicación con maven. Esta vez no debe haber ningún error.
+
+   ![Conexión DB](img/figura03.png)
