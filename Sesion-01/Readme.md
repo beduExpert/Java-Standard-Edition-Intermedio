@@ -1,11 +1,10 @@
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 1: Gestión de bases de datos
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Que el alumno aprenda las interfaces para conectarse y hacer consultas a una base de datos.
+- Comprender el modelo de abstracción usado en Java para las bases de datos.
+- Aprender las ventajas de usar un ORM y JPA.
 
 #### ORGANIZACION DE LA CLASE 
 
