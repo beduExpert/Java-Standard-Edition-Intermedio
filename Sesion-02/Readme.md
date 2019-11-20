@@ -1,11 +1,11 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 02: Multithreading y procesamiento concurrente
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Comprender la diferencia entre un proceso y un hilo
+- Conocer la utilidad de la programación mediante el uso de hilos.
+- Conocer la clase Thread y la interfaz Runnable de Java, así como la forma de crear hilos con ellas.
 
 #### ORGANIZACION DE LA CLASE 
 
@@ -13,4 +13,9 @@ agrega el programa que se desarrollara con backticks> [agrega la sesion con back
 
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
+
 
