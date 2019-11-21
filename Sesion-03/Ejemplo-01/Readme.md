@@ -1,28 +1,116 @@
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
-
-## Titulo del Ejemplo
+## Definiendo una interfaz funcional
 
 ### OBJETIVO
+ - Conocer los elementos básicos de las interfaces funcionales en Java
+ - Crear tu primera inerface funcional
 
-- Lo que esperamos que el alumno aprenda
+### Prerequisitos
 
-#### REQUISITOS
+* Maven
+* JDK 11
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+### Maven
 
-#### DESARROLLO
+Para ejecutar las pruebas de maven usa:
+```bash
+    mvn test
+```
 
-Agrega las instrucciones generales del ejemplo o reto
+### Procedimiento
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+#### Definiendo la interfaz
+1. Descarga el código del módulo (link pendiente)
+1. En el paquete org.bedu.jse2.demo.ejemplos crea la interfaz StringToInteger
+1. Anota la interfaz con _@FunctionalInterface_
+1. Define el método abstracto
+```java
+   Integer convertir(String str);
+```
+#### Clase contenedora
+1. Crea la clase Ejemplo1 en el paquete org.bedu.jse2.demo.ejemplos
+1. Agrega el siguiente bloque de código
+```java
+Integer sumar(String a, String b){
+  return null;
+}
+```
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+#### Prueba unitaria
+1. Crea una prueba para la clase Ejemplo1
+  ![Crear prueba](img/figura01.png)
+1. Agrega el siguiente código
+```java
+@Test
+@DisplayName("Suma dos strings convertidos a enteros")
+void addsUpTwoIntegers(){
+    String a = "4";
+    String b = "8";
+    Integer expected = 12;
 
-![imagen](https://picsum.photos/200/300)
+    Ejemplo1 ejemplo1 = new Ejemplo1();
+
+    assertEquals(expected, ejemplo1.sumar(a,b));
+}
+```
+
+Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando null.
+
+#### Implementando la interfaz (clase anónima)
+
+1. Reemplaza el código de la clase de la siguiente maner
+```java
+public class Ejemplo1 {
+
+   private final StringToInteger parser = new StringToInteger() {
+       @Override
+       public Integer convertir(String str) {
+           return Integer.parseInt(str);
+       }
+   };
+
+    Integer sumar(String a, String b) {
+
+        return parser.convertir(a) + parser.convertir(b);
+    }
+}
+```
+1. Vuelve a ejecutar la prueba
+
+En este primer ejemplo estamos usando un método tradicional implementando una clase anónima.
 
 
+#### Implementando la interfaz (lambda)
+
+1. Reemplaza el código de la clase de la siguiente maner
+```java
+public class Ejemplo1 {
+
+   private final StringToInteger parser = s -> Integer.parseInt(s);
+
+    Integer sumar(String a, String b) {
+
+        return parser.convertir(a) + parser.convertir(b);
+    }
+}
+```
+1. Vuelve a ejecutar la prueba
+
+Esta vez hemos usado una lambda para proveer la implementación de la interfaz. El código es mucho más legible
+
+#### Implementando la interfaz (referencia a método)
+
+1. Reemplaza el código de la clase de la siguiente maner
+```java
+public class Ejemplo1 {
+
+   private final StringToInteger parser =  Integer::parseInt;
+
+    Integer sumar(String a, String b) {
+
+        return parser.convertir(a) + parser.convertir(b);
+    }
+}
+```
+1. Vuelve a ejecutar la prueba
+
+Finalmente, cuando una lambda simplemente pasa su argumento a un método, podemos reemplazarla por una referencia directa a ese método, como hicimos en este caso con Integer::parseInt.
