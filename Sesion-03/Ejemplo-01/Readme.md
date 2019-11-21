@@ -1,10 +1,10 @@
-## Definiendo una interfaz funcional
+## Ejemplo 01: Definiendo una interfaz funcional
 
 ### OBJETIVO
  - Conocer los elementos básicos de las interfaces funcionales en Java
  - Crear tu primera inerface funcional
 
-### Prerequisitos
+### REQUISITOS
 
 * Maven
 * JDK 11
@@ -19,16 +19,25 @@ Para ejecutar las pruebas de maven usa:
 ### Procedimiento
 
 #### Definiendo la interfaz
-1. Descarga el código del módulo (link pendiente)
-1. En el paquete org.bedu.jse2.demo.ejemplos crea la interfaz StringToInteger
-1. Anota la interfaz con _@FunctionalInterface_
-1. Define el método abstracto
+1. Descarga el código del módulo ![Código](codigo)
+
+2. En el paquete `org.bedu.jse2.demo.ejemplos` crea la interfaz `StringToInteger`
+
+3. Anota la interfaz con ***@FunctionalInterface***
+
+4. Define el método abstracto
+
 ```java
    Integer convertir(String str);
 ```
+
+
 #### Clase contenedora
-1. Crea la clase Ejemplo1 en el paquete org.bedu.jse2.demo.ejemplos
-1. Agrega el siguiente bloque de código
+
+1. Crea la clase Ejemplo1 en el paquete `org.bedu.jse2.demo.ejemplos`.
+
+2. Agrega el siguiente bloque de código: 
+
 ```java
 Integer sumar(String a, String b){
   return null;
@@ -36,9 +45,11 @@ Integer sumar(String a, String b){
 ```
 
 #### Prueba unitaria
+
 1. Crea una prueba para la clase Ejemplo1
   ![Crear prueba](img/figura01.png)
-1. Agrega el siguiente código
+
+2. Agrega el siguiente código:
 ```java
 @Test
 @DisplayName("Suma dos strings convertidos a enteros")
@@ -53,11 +64,12 @@ void addsUpTwoIntegers(){
 }
 ```
 
-Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando null.
+Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando `null`.
+
 
 #### Implementando la interfaz (clase anónima)
 
-1. Reemplaza el código de la clase de la siguiente maner
+1. Reemplaza el código de la clase de la siguiente manera:
 ```java
 public class Ejemplo1 {
 
@@ -74,7 +86,8 @@ public class Ejemplo1 {
     }
 }
 ```
-1. Vuelve a ejecutar la prueba
+
+2. Vuelve a ejecutar la prueba
 
 En este primer ejemplo estamos usando un método tradicional implementando una clase anónima.
 
@@ -93,7 +106,7 @@ public class Ejemplo1 {
     }
 }
 ```
-1. Vuelve a ejecutar la prueba
+2. Vuelve a ejecutar la prueba
 
 Esta vez hemos usado una lambda para proveer la implementación de la interfaz. El código es mucho más legible
 
@@ -111,6 +124,6 @@ public class Ejemplo1 {
     }
 }
 ```
-1. Vuelve a ejecutar la prueba
+2. Vuelve a ejecutar la prueba
 
-Finalmente, cuando una lambda simplemente pasa su argumento a un método, podemos reemplazarla por una referencia directa a ese método, como hicimos en este caso con Integer::parseInt.
+Finalmente, cuando una lambda simplemente pasa su argumento a un método, podemos reemplazarla por una referencia directa a ese método, como hicimos en este caso con `Integer::parseInt`.
