@@ -1,11 +1,12 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 04: Procesos asíncronos
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Comprender la utilidad de la programación asíncrona.
+- Conocer la Non-Blocking API de Java
+- Conocer la forma de implementar la programación reactiva en Java
+
 
 #### ORGANIZACION DE LA CLASE 
 
@@ -13,4 +14,8 @@ agrega el programa que se desarrollara con backticks> [agrega la sesion con back
 
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
 
