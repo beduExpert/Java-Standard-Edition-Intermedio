@@ -1,28 +1,34 @@
+## Ejemplo 2: Recolectando información de sensores con un CompletableFuture
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### Objetivo
+- Emplear la clase CompletableFuture para el procesamiento asíncrono de información.
 
-## Titulo del Ejemplo
+### Requisitos
+- JDK 8 o superior
+- IDE de tu preferencia
 
-### OBJETIVO
+### Desarrollo
+Basándonos en el sistema de medición del ejemplo 1, haremos los cambios necesarios para que emplee la API Future de Java. Para ello: 
 
-- Lo que esperamos que el alumno aprenda
+1. Crearemos un nuevo método llamado ejemploCompletableFuture, en el que volveremos a generar la lista de valores enteros llamada id.
+2. Llamaremos también al método obtenerPromedio que realiza el cálculo de manera secuencial, para tener un punto de comparación entre nuestros resultados.
+3. Crearemos una lista de CompletableFuture mediante un stream de nuestra lista de ids, llamándolos de manera asíncrona para no esperar a que cada uno termine su procesamiento. Esto se realizará de la siguiente manera:
+```java
+List<CompletableFuture<Double>> futuros = ids.stream()
+			//llamamos a la ejecución de la lectura de los sensores de manera asíncrona
+		.map(id -> CompletableFuture.supplyAsync(() -> new SistemaMedicion().leer(id)))
+			.collect(Collectors.toList());
+```
 
-#### REQUISITOS
+4. Registraremos el tiempo de inicio y tiempo final, como en el caso del procesamiento secuencial. Además realizaremos las operaciones necesarias para extraer los valores de los CompletableFuture, y en base al stream obtenido calcularemos el promedio de dichos valores:
+```java
+LocalTime inicio = LocalTime.now(); //registramos el tiempo de inicio
+	double promedio = futuros.stream()
+			.mapToDouble(cf -> cf.join())//extraemos el valor del CompletableFuture
+			.average()                  //calculamos promedio
+			.orElse(0);
+	Duration tiempo = Duration.between(inicio, LocalTime.now());    //registramos el tiempo de fin
+	System.out.println((Math.round(promedio * 100.) / 100.) + " en " + tiempo.toMillis() + "ms"); //imprimimos el resultado
+```
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-![imagen](https://picsum.photos/200/300)
-
-
+5. Ejecutaremos nuestro código y comprobaremos el tiempo que toma a cada implementación terminar.
