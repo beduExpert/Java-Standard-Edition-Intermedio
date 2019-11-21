@@ -1,16 +1,23 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 03: Programación Funcional
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Conocer el paradigma de Programación Funcional.
+- Aprender a usar las características funcionales de Java.
+
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Definición e implementación de interfaces funcionales:
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+	
+- High Order Functions	
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	
+ - Streams	
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
 
