@@ -1,29 +1,24 @@
- 
+## Reto 3
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+En el Ejemplo 3 creamos un método capaz de recibir un una lista de enteros y una función que los transforma, sumando los valores. 
 
-### OBJETIVO 
+Para este reto deberás implementar el siguiente método que aplicará un filtro para aplicar la transformación sólo a los valores deseados.
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+```java
+    Integer filtrarTransformarYSumar(List<Integer> conjunto, Predicate<Integer> filtro, IntUnaryOperator funcion);
+```
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+ 1. Agrega un caso de prueba con el valor esperado:
+ 
+ ![Nuevo caso](img/figura01.png)
+	 
+ 2. Abre la clase Ejemplo2 y agrega el siguiente código:
+ 
+  ![Nueva función](img/figura02.png)
+	 
+ 3. Vuelve a ejecutar la prueba
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+</details>
