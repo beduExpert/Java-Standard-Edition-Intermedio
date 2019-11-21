@@ -1,29 +1,30 @@
- 
+## Reto 01
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### OBJETIVO
+- Usar las interfaces propias de Jva para poder realizar la convrsión de un objeto de tipo **String** a un objeto de tipo **Integer**.
 
-### OBJETIVO 
-
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+En el Ejemplo 1 creamos nuestra propia interfaz para convertir un `String` en un entero. Reemplaza esta interfaz propia por una de las genéricas que proporciona Java. 
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+ 1. Elimina la interfaz **StringToInteger**
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+ 2. Abre la clase **Ejemplo1**
+      
+ 3. Reemplaza el uso de **StringToInteger** por **Function<String, Integer>** y el método **convertir** por **apply** (el método de la interfaz *Function*).
+ 
+  ![Cambio de interfaz](img/figura01.png)
 
-![imagen](https://picsum.photos/200/300)
+ 4. Vuelve a ejecutar la prueba.
 
+<p>
+Javaprovee de un amplio conjunto de interfaces funcionales de uso general lo que nos permite no tener que definir las propias constantemente.
+</p>
+
+<p>
+Es recomendable familiarizarse con este catálogo para poder usarlo cuando sea necesario.
+</p>
+
+
+</details>
