@@ -1,29 +1,33 @@
- 
+## Reto 02
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### OBJETIVO
 
-### OBJETIVO 
+- Realizar una High Order Function un proceso para recibir un conjunto de enteros y realizar la suma de todos ellos.
 
-- Lo que esperamos que el alumno aprenda 
+### DESARROLLO
 
-#### REQUISITOS 
+En el Ejemplo 2 creamos un método capaz de recibir un objeto Iterable de enteros y una función que los transforma. Para este reto deberás implementar el siguiente método
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+```java
+    Integer transformarYSumar(Iterable<Integer> conjunto, Function<Integer, Integer> funcion);
+```
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+ 1. Agrega un caso de prueba con el valor esperado:
+ 
+ ![Nuevo caso](img/figura01.png)
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+ 2. Abre la clase Ejemplo2 y agrega el siguiente código:
+ 
+  ![Nueva función](img/figura02.png)  
+      
+ 3. Vuelve a ejecutar la prueba.
 
-![imagen](https://picsum.photos/200/300)
+<p>
+Los dos métodos que implementamos son semejantes a los operadores `map` y reduce de `Streams`. La diferencia es que aquellos no reciben un iterable, sino que Stream itera la función internamente.
+</p>
 
+
+</details>
