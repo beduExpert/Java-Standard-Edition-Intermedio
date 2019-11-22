@@ -1,29 +1,20 @@
- 
+## Reto 3: Adaptando el event loop
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivo
+- Modificar un event loop ya existente para realizar tareas diferentes a las planeadas originalmente
 
-### OBJETIVO 
+### Requisitos
+- JDK 8 o superior
+- IDE de tu preferencia
+- Ejemplo 3
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
+### Desarrollo
+Basándote en el event loop desarrollado durante el ejemplo 3, ahora tendrás que realizar las modificaciones necesarias en su event handler para que cuando reciba un número, vaya acumulando el valor recibido e imprima en consola el valor actual que lleva acumulado. 
+También deberás agregar una condición que imprima el mensaje "Recibido un objeto no identificado" si el evento recibido no es un String o un Number.
 <details>
-
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+	<summary>Solución</summary>
+	
+  1. Para poder tener un acumulador para los valores numéricos tendras que crear tu propia implementación de la interfaz EventHandler, agregándole una variable donde tengas la suma.
+	
+ 2. Deberás definir también el método procesarEvento de dicha interfaz, agregando las condiciones para manipular objetos de tipo String y Number (cuidando que sumes el valor al acumulador de tu clase) y finalmente para todos los demás tipos de objeto solo mostrar el mensaje que diga que el objeto no fue identificado.
+</details>
