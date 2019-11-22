@@ -1,28 +1,106 @@
+## Ejemplo 3: Event loop
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### Objetivo
+- Crear un event loop sencillo que permita manejar distintos tipos de eventos.
 
-## Titulo del Ejemplo
+### Requisitos
+- JDK 8 o superior
+- IDE de tu preferencia
 
-### OBJETIVO
+### Desarrollo
+Como ya vimos, un event loop es un hilo que se ejecuta continuamente y recibe eventos que son pasados a métodos diferentes que son conocidos como event handlers o workers. En este caso crearemos un event loop simple que recibirá instancias de objetos y llamará a un event handler que reaccionará dependiendo del tipo de la instancia recibida.
 
-- Lo que esperamos que el alumno aprenda
+1. Crearemos una interfaz llamada **EventHandler**, que será la interfaz que tendremos que implementar para definir nuestros worker para los eventos que reciba nuestro event loop. En esta interfaz definiremos un método llamado **procesarEvento** que recibirá un Object:
+```java
+public interface EventHandler {
+    void procesarEvento(Object evento);
+}
+```
 
-#### REQUISITOS
+2. Crearemos ahora una clase llamada **EventLoopSimple**, misma que implementará la interfaz Runnable de Java. Nuestra clase tendrá una bandera que definirá si sigue en ejecución, una lista de tareas pendientes y un EventHandler que será el que ejecute las tareas pendientes:
+```java
+public class EventLoopSimple implements Runnable {
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+    private boolean enEjecucion = false;
+    private Queue<Object> listaTareas = new LinkedList<>();
+    private final EventHandler worker;
+}
+```
 
-#### DESARROLLO
+3. Agregaremos también un constructor donde pasaremos el EventHandler que requiramos para nuestra implementación y definiremos el método **run** obligado por la interfaz Runnable. En este método tendremos un ciclo que se ejecutará mientras la variable enEjecucion lo diga o mientras tengamos tareas pendientes en nuestra lista. Desde aquí llamaremos a nuestro worker pasándole los eventos que vamos recibiendo y esperaremos un tiempo entre cada vez que ejecutamos el ciclo. Si no tenemos tareas pendientes esperaremos 1 segundo a que se reciban más tareas:
+```java
+public EventLoopSimple(EventHandler worker) {
+	this.worker = worker;
+}
 
-Agrega las instrucciones generales del ejemplo o reto
+@Override
+public void run() {
+	try{
+		while(enEjecucion || !listaTareas.isEmpty()){
+			Object evento = listaTareas.poll();
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+			if(evento == null){
+				System.out.println("No hay eventos pendientes, esperando 1s...");
+				TimeUnit.SECONDS.sleep(1);
+			}
+			worker.procesarEvento(evento);
+			TimeUnit.MILLISECONDS.sleep(100);
+		}
+	} catch (InterruptedException e) {
+		enEjecucion = false;
+		e.printStackTrace();
+	}
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+}
+```
 
-![imagen](https://picsum.photos/200/300)
+3. Definiremos también los métodos auxiliares para iniciar, detener, registrar eventos y consultar el estado de nuestro worker:
+```java
+public void iniciar(){
+	this.enEjecucion = true;
+	new Thread(this).start();
+}
 
+public void detener(){
+	this.enEjecucion = false;
+}
 
+public void registrarEvento(Object evento){
+	listaTareas.add(evento);
+}
+
+public boolean isEnEjecucion(){
+	return enEjecucion;
+}
+```
+
+4. Ahora, en nuestro método main crearemos una instancia de EventLoopSimple y crearemos un EventHandler mediante una expresión lambda. En este handler manejaremos eventos de tipo String y de tipo Number, imprimiendo el valor recibido en consola:
+```java
+EventLoopSimple eventLoop = new EventLoopSimple(evento -> {
+   if(evento instanceof String){
+	   System.out.println("String recibido: " + evento);
+   }
+   else if(evento instanceof Number){
+	   System.out.println("Número recibido: " + evento);
+   }
+});
+```
+
+5. Iniciaremos nuestro Event Loop, registraremos nuestro primer evento y esperaremos 500ms para que se ejecute. Después registraremos otros 3 eventos y finalizaremos nuestro programa.
+```java
+eventLoop.iniciar();
+eventLoop.registrarEvento("Hola mundo");
+
+try {
+	TimeUnit.MILLISECONDS.sleep(500); //simulando acciones diferentes con un sleep
+} catch (InterruptedException e) {
+	e.printStackTrace();
+}
+eventLoop.registrarEvento(1);
+eventLoop.registrarEvento("Adiós");
+eventLoop.registrarEvento(10.0);
+
+eventLoop.detener();
+```
+
+6. Por último ejecutaremos nuestra aplicación y comprobaremos los resultados que obtenemos en la consola.
