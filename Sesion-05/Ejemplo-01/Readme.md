@@ -1,28 +1,82 @@
+## Ejemplo 01: Usando las interfaces de RxJava
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### Objetivos
+* Familiarizarnos con algunas de las interfaces de RxJava
 
-## Titulo del Ejemplo
+### Prerequisitos
+* Maven
+* JDK 11
 
-### OBJETIVO
+### Maven
 
-- Lo que esperamos que el alumno aprenda
+Para ejecutar las pruebas de maven usa:
+```bash
+    mvn test
+```
 
-#### REQUISITOS
+### Procedimiento
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+1. Descarga el código del ejemplo 1 (link pendiente)
 
-#### DESARROLLO
+2. Crea la clase Ejemplo1 en el paquete org.bedujse.demo.reactive.ejemplo1
 
-Agrega las instrucciones generales del ejemplo o reto
+3. Define los siguientes métodos vacíos.
+```java
+   static  Single<Integer> sumarSingle(){
+       return null;
+   }
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+   static Integer sumar(){
+       return null;
+   }
+```
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+4. Crea una prueba para la clase Ejemplo1
+  ![Crear prueba](img/figura01.png)
+  
+5. Agrega el siguiente código
+```java
+    @Test
+    @DisplayName("Suma los elementos y regresa Single")
+    void sumaElementos() {
+        Ejemplo1.sumarSingle()
+                .subscribe(s -> assertThat(s).isEqualTo(21));
+    }
 
-![imagen](https://picsum.photos/200/300)
+    @Test
+    @DisplayName("Suma los elementos y regresa valor (bloqueante)")
+    void sumaElementosBloqueante() {
+        assertThat(Ejemplo1.sumar()).isEqualTo(21);
+    }
+```
+
+Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando null.
+
+
+6. Reemplaza el código de la clase de la siguiente maner
+
+RxJavaObservableGenerator es una clase que genera un observable a partir de una lista de números del 1 al 6.
+
+```java
+   static  Single<Integer> sumarSingle(){
+       return RxJavaObservableGenerator
+               .observableStream()
+               .reduce(0,(a,b) -> a + b);
+   }
+
+   static Integer sumar(){
+       return RxJavaObservableGenerator
+               .observableStream()
+               .reduce(0,(a,b) -> a + b)
+               .blockingGet();
+   }
+```
+7. Vuelve a ejecutar la prueba
+
+Nota que estamos usando programación funcional para reducir el conjunto de enteros a su suma. El resultado de .reduce es un Single<Integer>. En el primer método regresamos ese objeto para y en la prueba usamos .subscribe para hacer la acerción.
+
+En el segundo caso usamos .blockingGet el cual bloquea el hilo y arroja el resultado una vez que se tiene.
+
+Recuerda que debes pensar dos veces antes de usar una operación bloqueante.
 
 
