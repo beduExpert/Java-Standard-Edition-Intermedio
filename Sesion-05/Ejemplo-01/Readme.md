@@ -16,9 +16,9 @@ Para ejecutar las pruebas de maven usa:
 
 ### Procedimiento
 
-1. Descarga el código del ejemplo 1 (link pendiente)
+1. Descarga el código del ejemplo 1
 
-2. Crea la clase Ejemplo1 en el paquete org.bedujse.demo.reactive.ejemplo1
+2. Crea la clase Ejemplo1 en el paquete `org.bedujse.demo.reactive.ejemplo1`
 
 3. Define los siguientes métodos vacíos.
 ```java
@@ -50,12 +50,12 @@ Para ejecutar las pruebas de maven usa:
     }
 ```
 
-Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando null.
+Si ejecutas la prueba en este momento obtendrás un error ya que estamos regresando `null`.
 
 
-6. Reemplaza el código de la clase de la siguiente maner
+6. Reemplaza el código de la clase de la siguiente manera:
 
-RxJavaObservableGenerator es una clase que genera un observable a partir de una lista de números del 1 al 6.
+**RxJavaObservableGenerator** es una clase que genera un observable a partir de una lista de números del 1 al 6.
 
 ```java
    static  Single<Integer> sumarSingle(){
@@ -73,9 +73,9 @@ RxJavaObservableGenerator es una clase que genera un observable a partir de una 
 ```
 7. Vuelve a ejecutar la prueba
 
-Nota que estamos usando programación funcional para reducir el conjunto de enteros a su suma. El resultado de .reduce es un Single<Integer>. En el primer método regresamos ese objeto para y en la prueba usamos .subscribe para hacer la acerción.
+Nota que estamos usando programación funcional para reducir el conjunto de enteros a su suma. El resultado de `.reduce` es un `Single<Integer>`. En el primer método regresamos ese objeto para y en la prueba usamos `.subscribe` para hacer la acerción.
 
-En el segundo caso usamos .blockingGet el cual bloquea el hilo y arroja el resultado una vez que se tiene.
+En el segundo caso usamos `.blockingGet` el cual bloquea el hilo y arroja el resultado una vez que se tiene.
 
 Recuerda que debes pensar dos veces antes de usar una operación bloqueante.
 
