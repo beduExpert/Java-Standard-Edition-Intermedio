@@ -1,29 +1,27 @@
- 
+## Reto 1
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Reafirmar la comprensión de las interfaces RxJava 
+* Reafirmar el conocimiento de programación funcional
 
-### OBJETIVO 
+En el Ejercicio 1 partimos de un objeto `Observable<Integer>` para obtener su suma.
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+En esta ocasión debemos elevar al cubo cada elemento y sumar sólo los que sean mayores a 50.
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+  <ol>
+      <li>Agrega una nueva prueba como se muestra<li>
+         <img src="img/figura01.png" alt="Nueva prueba"/>
+      <li>Agrega el siguiente método a la clase Ejemplo1</li>
+         <img src="img/figura02.png" alt="Método"/>
+      <li>Vuelve a ejecutar la prueba</li>
+  </ol>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+<p>
+Al igual que en programacion funcional común, podemos hacer uso de `.map` y `.filter`.
+</p>
 
-![imagen](https://picsum.photos/200/300)
 
+</details>
