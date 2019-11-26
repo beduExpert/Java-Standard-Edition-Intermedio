@@ -1,29 +1,25 @@
- 
+## Reto 1
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Crear una clase que convierta entre dos tipos distingos 
 
-### OBJETIVO 
+En el Ejercicio 1 creamos una clase que puede almacenar un objeto genérico.
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+Para este ejercicio crea una clase que permita convertir un objeto cualquiera a una representación de string.
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+  <ol>
+      <li>Agrega una nueva prueba como se muestra<li>
+         <img src="img/figura01.png" alt="Nueva prueba"/>
+      <li>Crea una clase con la siguiente definición</li>
+         <img src="img/figura02.png" alt="Método"/>
+      <li>Vuelve a ejecutar la prueba</li>
+  </ol>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+<p>
+    En este caso aprovechamos el método toString que está definido en la cima de la jerarquía de objetos Java (Object).
+</p>
 
-![imagen](https://picsum.photos/200/300)
-
+</details>
