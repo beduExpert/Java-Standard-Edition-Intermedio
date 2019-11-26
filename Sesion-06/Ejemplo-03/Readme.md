@@ -1,28 +1,57 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+## Ejemplo 03: Clases Genéricas
 
-## Titulo del Ejemplo
+### Objetivos
+* Crear una clase que use _Generics_ con un límite para poder usar métodos del tipo superior.
 
-### OBJETIVO
+### Procedimiento
 
-- Lo que esperamos que el alumno aprenda
+1. Crea una clase de prueba con el siguiente código
+```java
+package org.bedu.jse2.generics;
 
-#### REQUISITOS
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+import static org.junit.jupiter.api.Assertions.*;
 
-#### DESARROLLO
+class LimitedConverterTest {
 
-Agrega las instrucciones generales del ejemplo o reto
+    @Test
+    @DisplayName("Funciona con Enteros")
+    void integers(){
+        Integer numero1 = 3;
+        Integer numero2 = 4;
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+        LimitedConverter<Integer> converter = new LimitedConverter<>();
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+        assertFalse(converter.esMayorQue(numero1, numero2));
+    }
+    
+    @Test
+    @DisplayName("Funciona con Double")
+    void doubles(){
+        Double numero1 = 3.4;
+        Double numero2 = 4.7;
 
-![imagen](https://picsum.photos/200/300)
+        LimitedConverter<Double> converter = new LimitedConverter<>();
 
+        assertTrue(converter.esMayorQue(numero2, numero1));
 
+    }
+
+}
+```
+1. Crea la clase LimitedConverter de la siguiente manera
+```java
+package org.bedu.jse2.generics;
+
+public class LimitedConverter <E extends Number>{
+
+   public boolean esMayorQue(E number1, E number2) {
+     return (number1.doubleValue() - number2.doubleValue()) > 0;
+   }
+}
+```
+
+Al establecer el límite superior podemos usar métodos de ese tipo, en este caso .doubleValue.
