@@ -1,5 +1,5 @@
 
-## Clases Genéricas
+## Ejemplo 01: Clases Genéricas
 
 ### Objetivos
 * Crear una clase que use _Generics_ para comprender su uso
