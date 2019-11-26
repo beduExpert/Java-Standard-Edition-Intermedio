@@ -1,29 +1,21 @@
- 
+## Reto 3
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Comprender las jerarquías de métodos genéricos
 
-### OBJETIVO 
+### Tip
+  Puedes revisar el siguiente contenido [material](https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html)
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
 
 <details>
+  <summary>Solución</summary>
+  <ol>
+      <li>Para que el código funcione basta con establecer un límite superior al definir numList<li>
+         <img src="img/figura01.png" alt="Nueva prueba"/>
+  </ol>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+<p>
+En este ejercicio creamos una jerarquía de clases genéricas, que requiere cierto tratamiento especial.
+</p>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+</details>
