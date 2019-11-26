@@ -1,28 +1,46 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+## Ejemplo 02: Métodos Genéricos
 
-## Titulo del Ejemplo
+### Objetivos
+* Crear un método que use _Generics_ para comprender su uso.
 
-### OBJETIVO
+### Procedimiento
 
-- Lo que esperamos que el alumno aprenda
+1. Crea una nueva clase con el siguiente contenido
+```java
+package org.bedu.jse2.generics;
 
-#### REQUISITOS
+public class EchoClass {
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+    public static <E> E echo(E input){
+        return input;
+    }
+}
+```
+1. Crea una clase de prueba para la clase, y agrega esta primera prueba
+```java
+    @Test
+    @DisplayName("Eco de un string (generics expícito)")
+    void echoString() {
+        String input = "Hola mundo";
+        String output = EchoClass.<String>echo(input);
 
-#### DESARROLLO
+        assertEquals(input, output);
+    }
 
-Agrega las instrucciones generales del ejemplo o reto
+```
+En este caso, al ejecutar el método echo, definimos explícitamente el tipo parametrizado del método (String).
+1. Agrega la siguiente prueba
+```java
+    @Test
+    @DisplayName("Eco de un Integer (generics implícito, tipo inferido)")
+    void echoInteger() {
+        Integer input = 85549;
+        Integer output = EchoClass.echo(input);
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+        assertEquals(input, output);
+    }
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-![imagen](https://picsum.photos/200/300)
-
-
+```
+En este caso al ejecutar el método echo dejamos que el compilador haga la inferencia del tipo parametrizado. Para métodos genéricos
+es preferible usar este segunda forma.
