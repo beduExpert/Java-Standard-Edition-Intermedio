@@ -1,29 +1,31 @@
- 
+## Reto 3
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Reafirmar el conocimiento de programación reactiva con servicios intermedios.
 
-### OBJETIVO 
+En el Ejercicio 3 usamos un servicio intermedio para transformar un Flux<PersonaEntity> en un Flux<String>.
 
-- Lo que esperamos que el alumno aprenda 
+En esta ocasión nos piden que la salida tenga el nombre completo y el teléfono de una persona dado su nombre o uno de sus apellidos.
 
-#### REQUISITOS 
+Crea una nueva clase Agenda con el nombre completo y el número y haz que devuelva un Flux<Agenda>
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+  <ol>
+      <li>Crea la calse Agenda<li>
+         <img src="img/figura01.png" alt="Clase Agenda"/>
+      <li>Agrga el siguiente caso de prueba</li>
+         <img src="img/figura02.png" alt="Prueba"/>
+      <li>En el servicio agrega el código que filtre y transforme los resultados</li>
+         <img src="img/figura03.png" alt="Método"/>
+      <li>Finalmente, en el controlador agrega la llamada al servicio</li>
+         <img src="img/figura04.png" alt="Controlador"/>
+  </ol>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+<p>
+El método .next nos permite tomar el primer elemento de un Flux y reducirlo a un Mono
+</p>
 
-![imagen](https://picsum.photos/200/300)
-
+</details>
