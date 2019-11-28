@@ -1,28 +1,29 @@
+## Ejemplo 01: Usar MicroProfile para crear un microservicio
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### Objetivos
+* Familiarizarnos con microprofile
 
-## Titulo del Ejemplo
+### Prerequisitos
+* Maven
+* JDK 11
 
-### OBJETIVO
+### Procedimiento
 
-- Lo que esperamos que el alumno aprenda
+1. Entrar a [MicroProfile Starter](https://start.microprofile.io/) 
+2. Crea el proyecto demo como se muestra:
+![proyecto](img/micro.PNG)
+3. Descomprimir el proyecto
+4. Abrir el proyecto con su IDE preferido y compilarlo, otra opcion es compilarlo con Maven:
 
-#### REQUISITOS
+    mvn clean package
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+4. Una vez compilado abrimos una terminal y nos colocamos en el directorio del proyecto y ejecutamos el siguiente comando:
 
-#### DESARROLLO
+    java -jar target/demo.jar
 
-Agrega las instrucciones generales del ejemplo o reto
+5. Una vez que termina de correr el proceso ingresamos con el navegador a:
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+    http://localhost:8181/index.html
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
-
-![imagen](https://picsum.photos/200/300)
 
 
