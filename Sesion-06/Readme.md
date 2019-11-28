@@ -1,16 +1,25 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 06: Clases genéricas
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Entender la necesidad de Generics
+- Conocer el uso de Generics
+- Entender el proceso de *Type Erasure* que hace el compilador
+
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
+- Clases genéricas
 
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+	
+ - Métodos Genéricos	
+	- [Ejemplo 02](Ejemplo-02)
+	- [Reto 02](Reto-02)
+	
+ - Límites superiores e inferiores	
+	- [Ejemplo 03](Ejemplo-03)
+	- [Reto 03](Reto-03)
 
