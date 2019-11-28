@@ -1,29 +1,38 @@
- 
+## Reto 2
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Reafirmar la comprensión de las interfaces Project Reactor 
+* Reafirmar el conocimiento de programación funcional
 
-### OBJETIVO 
+En el Ejercicio 2 partimos de un objeto Flux<Integer> para obtener su suma.
 
-- Lo que esperamos que el alumno aprenda 
+En esta ocasión debemos elevar al cubo cada elemento y sumar sólo los que sean menores a 50.
 
-#### REQUISITOS 
+Restricciones:
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+usa flatMap en vez de map
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+  <ol>
+      <li>Agrega una nueva prueba como se muestra<li>
+         <img src="img/figura01.png" alt="Nueva prueba"/>
+      <li>Agrega el siguiente método a la clase Ejemplo1</li>
+         <img src="img/figura02.png" alt="Método"/>
+      <li>Vuelve a ejecutar la prueba</li>
+  </ol>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+<p>
+.flatMap tiene dos casos de uso generales:
 
-![imagen](https://picsum.photos/200/300)
+<ol>
+<li>Cuando se desea procesar el stream/flux en paralelo</li>
+<li>Cuando cada valor puede generar varios valores más (expansion de la lista)</li>
+</ol>
 
+Ten en cuenta que flatMap procesa en paralelo, por lo que el resultado final debe ser independiente del orden de ejecución de las operaciones/funciones (deben ser funciones puras).
+</p>
+
+
+</details>
