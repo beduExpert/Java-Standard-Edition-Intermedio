@@ -1,28 +1,43 @@
+## Ejemplo 03: Modificando un Flux en un servicio intermedio
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### Objetivos
+* Aprender a usar servicios intermedios no bloqueantes
 
-## Titulo del Ejemplo
+### Prerequisitos
+* Maven
+* JDK 11
 
-### OBJETIVO
+### Maven
 
-- Lo que esperamos que el alumno aprenda
+Para ejecutar las pruebas de maven usa:
+```bash
+    mvn test
+```
 
-#### REQUISITOS
+### Procedimiento
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+1. En el código del ejemplo existe una arquitectura de tres capas (controlador - servicio - repositorio). En este ejercicio sólo debes modificar la clase E3Service 
 
-#### DESARROLLO
+2. Ejecuta la prueba para saber qué es lo que se espera.
 
-Agrega las instrucciones generales del ejemplo o reto
+3. Agrega el siguiente código a E3Service
 
-<details>
-	<summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+```java
+    public Flux<String> getListaNombre(){
+        return REPOSITORY
+                .getPersonas()
+                .map(this::formatearNombre);
+    }
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una) 
+    private String formatearNombre(PersonaEntity persona){
+        return String.format("%s %s, %s", persona.getPrimerApellido(), persona.getSegundoApellido(), persona.getNombre());
+    }
+```
 
-![imagen](https://picsum.photos/200/300)
+4. Vuelve a ejecutar la prueba
+
+En este ejemplo aprendimos a manipular un Flux sin necesidad de bloquearlo. Recuerda que debemos evitar bloquar hilos no-bloqueantes para poder mantener la responsividad del sistema.
+
+Toma en cuenta que, aunque la arquitectura en tres capas es muy común, en este caso se simplificó su uso, esto es, este no es un ejemplo real.
 
 
