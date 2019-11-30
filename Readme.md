@@ -1,8 +1,9 @@
  
-## Módulo: Nombre del modulo
+## Módulo: Java Standard Edition Intermedio
 
 ### OBJETIVO 
- - Agrega lo que van a aprender en el modulo
+ - Conocer algunos conceptos y elementos intermedios en el lenguaje de programación Java.
+ - Conocer prácticas que te ayudarán a convertirte en mejor programador y a aplicar conceptos de diseño de clases.
 
  ### ORGANIZACIÓN DE MÓDULO 
  
