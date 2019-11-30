@@ -1,29 +1,28 @@
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
-
-## Titulo del Ejemplo
+## Postwork: Bases de datos
 
 ### OBJETIVO
 
-- Lo que esperamos que el alumno aprenda
+- Reafirmar los conocimientos vistos durante la sesión 1.
+- Crear las entidades y repositorios que usaremos para la creación del proyecto personal.
 
 #### REQUISITOS
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+1. MySQL instalado y configurado.
+2. Apache Maven.
+3. JDK 12.
 
 #### DESARROLLO
 
-Agrega las instrucciones generales del ejemplo o reto
+Estos son los diagramas de clase y entidad-relación de la aplicación que crearemos:
 
-<details>
+![Clases](img/Diagrama_de_clases.png)
 
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+![ER](img/Diagrama_ER.png)
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
+Crea las entidades y repositorios y define una prueba de humo que te ayude a validar que funcione corréctamente.
 
-![imagen](https://picsum.photos/200/300)
+Querrás buscar documentación de las anotaciones **@ElementCollection**, **@CollectionTable** y **@MapKeyJoinColumn**.
+
 
 
