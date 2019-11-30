@@ -9,13 +9,14 @@
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
-
+- Creación de hilos extendiendo la clase Thread
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
+	
+- Creación de hilos extendiendo la interface Thread	
 	- [Ejemplo 02](Ejemplo-02)
 	- [Reto 02](Reto-02)
+	
+- Uso de Thread	Pools
 	- [Ejemplo 03](Ejemplo-03)
 	- [Reto 03](Reto-03)
-
-
