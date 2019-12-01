@@ -1,29 +1,20 @@
+## Postwork Sesión 4: Inscripción de estudiantes
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+### OBJETIVO 
 
-## Titulo del Ejemplo
+- Aplicar los conocimientos de la programación asíncrona mediante un proyecto real.
 
-### OBJETIVO
+#### REQUISITOS 
 
-- Lo que esperamos que el alumno aprenda
-
-#### REQUISITOS
-
-1. Lo necesario para desarrollar el ejemplo o el Reto
+1. JDK 8 o superior
+2. IDE de tu preferencia
+3. Postwork de la sesión anterior
 
 #### DESARROLLO
+El director de la escuela te ha pedido que implementes un sistema de inscripción de alumnos que notifique al maestro cuando un alumno se haya inscrito a un curso y además le muestre la cantidad de alumnos que tiene su curso, sin bloquear la plataforma para que más estudiantes puedan inscribirse al mismo tiempo.
 
-Agrega las instrucciones generales del ejemplo o reto
+Es por esto que han considerado que la implementación más fácil será mediante el uso de un EventLoop que reciba la información del alumno y el curso al que se quiere inscribir, notificando en un worker al maestro de la inscripción.
 
-<details>
-
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
-
+Tu tarea consiste en implementar el EventLoop necesario para esta plataforma, así como el worker que notifique al maestro.
+El diagrama 1 muestra cómo sería el flujo del EventLoop
+![diagrama1](img/diagrama1.png)
