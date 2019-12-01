@@ -1,29 +1,7 @@
+## Postwork 05
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+A lo largo de este proyecto reafirmaremos lo que se ha aprendido durante las sesiones.
 
-## Titulo del Ejemplo
+### Módulo 5 - Programación reactiva
 
-### OBJETIVO
-
-- Lo que esperamos que el alumno aprenda
-
-#### REQUISITOS
-
-1. Lo necesario para desarrollar el ejemplo o el Reto
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
-
+Crea una clase que, usando streams paralelos y programación reactiva (Project Reactor) calcule el promedio de las calificaciones de un Curso dado.
