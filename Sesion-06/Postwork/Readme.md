@@ -1,29 +1,25 @@
+## Postwork 06
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+A lo largo de este proyecto reafirmaremos lo que se ha aprendido durante las sesiones.
 
-## Titulo del Ejemplo
+### Módulo 6 - Generics
 
-### OBJETIVO
+Uno de los principales uso de Generics es poder implementar algoritmos independientes de sus parámetros.
 
-- Lo que esperamos que el alumno aprenda
+Crea una implementación del algoritmo [Merge Sort](https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm) que cumpla con la siguiente interfaz:
 
-#### REQUISITOS
+Intenta que tu archivo tenga 50 líneas de código o menos (imports incluídos).
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+```java
+public class MergeSortAlgorithm {
+    public static <T extends Comparable<T>> List<T> sort(List<T> unsortedList) {
+        //Tu código aquí
+        return null;
+    }
 
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
-
+    public static <T> List<T> sort(List<T> unsortedList, Comparator<T> comparator) {
+        //Tu código aquí
+        return null;
+    }
+}
+```
