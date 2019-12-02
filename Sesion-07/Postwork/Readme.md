@@ -1,29 +1,36 @@
+## Postwork 07
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+A lo largo de este proyecto reafirmaremos lo que se ha aprendido durante las sesiones.
 
-## Titulo del Ejemplo
+### Módulo 7 - Microservicios
 
-### OBJETIVO
+Modificar el proyecto del Reto 3: 
 
-- Lo que esperamos que el alumno aprenda
+En el archivo pom cambiar la siguiente dependendecia:
 
-#### REQUISITOS
+```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+```
 
-1. Lo necesario para desarrollar el ejemplo o el Reto
+Por la siguiente:
 
-#### DESARROLLO
+```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+    </dependency>
+```
 
-Agrega las instrucciones generales del ejemplo o reto
+Ahora ocupando una base de datos MongoDB la cual se llamara "empleado" 
 
-<details>
+Modificamos la clase EmpleadoRepository pasarla a ser una interfaz:
 
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
+```java
+    public interface EmpleadoRepository extends ReactiveMongoRepository<Empleado, String>{
+    }
+```
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
-
+Y finalmente modificar el controlador con los metodos que nos devuelve la interfaz.
