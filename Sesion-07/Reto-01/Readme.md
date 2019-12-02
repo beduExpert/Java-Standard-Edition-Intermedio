@@ -1,29 +1,12 @@
- 
+## Reto 1
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Reafirmar el conocimiento de microprofile
 
-### OBJETIVO 
+En el Ejercicio 1 partimos de un proyecto el cual imprime "Hola mundo"
 
-- Lo que esperamos que el alumno aprenda 
+En esta ocasión debemos colocar una nueva ruta "/data/nuevo" en el proyecto por lo que hay que modificar la clase controller.
 
-#### REQUISITOS 
+Y este nuevo metodo llamado "nuevo" y que mande a imprimir al navegador "Mi nuevo mensaje!".
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
 
