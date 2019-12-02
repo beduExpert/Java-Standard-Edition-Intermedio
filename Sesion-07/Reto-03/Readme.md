@@ -1,29 +1,20 @@
- 
+## Reto 3
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Reafirmar el conocimiento de Spring webflux.
 
-### OBJETIVO 
+En el Ejercicio 3 solo ocupamos el metodo findAllEmpleados() del EmpleadoRepository.
 
-- Lo que esperamos que el alumno aprenda 
+Ahora ocuparemos los otros dos metodos:
 
-#### REQUISITOS 
+```java
+    findEmpleadoById(String id)
 
-1. Lo necesario para desarrollar el ejemplo o el Reto 
+    updateEmpleado(Empleado employee)
+```
 
-#### DESARROLLO
+El primero debera ser de tipo GET con la ruta /{id} y el segundo de tipo POST con la ruta /update.
 
-Agrega las instrucciones generales del ejemplo o reto
+Estos nuevo endpoint se definiran en DemoController con los nombres de metodos "getEmpleadoById" y "updateEmpleado".
 
-<details>
-
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
-
-![imagen](https://picsum.photos/200/300)
 
