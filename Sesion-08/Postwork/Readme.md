@@ -1,29 +1,11 @@
+## Postwork 08
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]
+A lo largo de este proyecto reafirmaremos lo que se ha aprendido durante las sesiones.
 
-## Titulo del Ejemplo
+### Módulo 8 - Buenas Prácticas
 
-### OBJETIVO
+Revisa el código de este proyecto y verifica que implemente buenas prácticas.
 
-- Lo que esperamos que el alumno aprenda
-
-#### REQUISITOS
-
-1. Lo necesario para desarrollar el ejemplo o el Reto
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
-
-<details>
-
-        <summary>Solucion</summary>
-        <p> Agrega aqui la solucion</p>
-        <p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details>
-
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agreges al menos una)
-
-![imagen](https://picsum.photos/200/300)
-
+_Nota_ Esta sesión no incluye código ya que, al ser un proyecto que el estudiante ha desarrollado a lo
+largo del módulo, es imposible saber qué archivos necesitan ser refactorizados.
 
