@@ -1,15 +1,12 @@
-
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks]  
-
-## Titulo de la Sesion 
+## Sesión 08: Buenas prácticas
 
 ### OBJETIVOS 
 
-- Lo que esperamos que el alumno aprenda al finalizar la sesion 
+- Conocer algunas de las buenas prácticas implementadas por los profesionales de la industría de desarrollo.
 
 #### ORGANIZACION DE LA CLASE 
 
-- Tema que veran en el ejemplo
+- Principios de diseño
 
 	- [Ejemplo 01](Ejemplo-01)
 	- [Reto 01](Reto-01)
