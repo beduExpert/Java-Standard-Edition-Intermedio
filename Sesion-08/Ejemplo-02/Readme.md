@@ -1,4 +1,4 @@
-## Ejemplo 02: Refactorizacón de código
+## Ejemplo 02: Refactorización de código
 
 ### Objetivos
 * Aplicar los principios de buenas prácticas para elevar la mantenibilidad y legibilidad del código
@@ -7,7 +7,7 @@
 
 #### Análisis
 
-Clona el proyecto (link pendiente) donde encontrarás una clase llamada ClaseEspaguetti.
+Clona el proyecto donde encontrarás una clase llamada ClaseEspaguetti.
 
 Analiza el código para identificar todo lo que está haciendo.
     * Por medio de las anotaciones _@RequestMapping_ está enlazando peticiones HTTP al sistema.
