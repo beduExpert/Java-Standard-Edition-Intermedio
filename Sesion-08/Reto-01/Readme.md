@@ -1,29 +1,98 @@
- 
+## Reto 1
 
-agrega el programa que se desarrollara con backticks> [agrega la sesion con backticks] 
-	
-## Titulo del Ejemplo 
+### Objetivos
+* Refactorizar la clase QuickSortAlgorithm para que implemente los principios de código limpio 
 
-### OBJETIVO 
 
-- Lo que esperamos que el alumno aprenda 
-
-#### REQUISITOS 
-
-1. Lo necesario para desarrollar el ejemplo o el Reto 
-
-#### DESARROLLO
-
-Agrega las instrucciones generales del ejemplo o reto
+En esta ocasión partimos de un código que cumple con el requisito funcional, pero es poco legible.
 
 <details>
+  <summary>Solución</summary>
 
-	<summary>Solucion</summary>
-	<p> Agrega aqui la solucion</p>
-	<p>Recuerda! escribe cada paso para desarrollar la solución del ejemplo o reto </p>
-</details> 
+  <p>
+    Cabe señalar que la propuesta presentada no es única. Diferentes personas pueden implementar diferentes reglas y niveles de refactorización
+  </p>
 
-Agrega una imagen dentro del ejemplo o reto para dar una mejor experiencia al alumno (Es forzoso que agregages al menos una)
+  <ol>
+      <li><strong>Usa nombres significativos</strong> Cambia los nombres de las variables para que sean más significativos.
+        <ul>
+            <li> u := listaOriginal </li>
+            <li> t := pivote </li>
+            <li> l := elementosMenores </li>
+            <li> r := elementosMayores </li>
+            <li> x := elemento </li>
+            <li> l2:= elementosMenoresOrdenados </li>
+            <li> r2:= elementosMayoresOrdenados </li>
+            <li> y := listaOrdenada </li>
+        </ul>
+      </li>
+      <li><strong>Programa para interfaces, no para clases concretas</strong> Cambia el uso de ArrayList<T> por List<T>.</li>
+      <li><strong>KISS + DRY</strong> Elimina estructuras complicadas del código. 
+        <ul>
+          <li> El ciclo de selección de elementos no ocupa el valor del índice (i), por lo que se puede reemplazar por un ciclo <em>for(Number elemento : listaOriginal)<em></li>
+          <li> Cuando se agregan todos los elementos de una lista se puede hacer desde el contructor o con el método <em>addAll</em></li>
+          <li> Opcionalmente, podemos usar streams y lambdas para simplificar la separación de elementos.</li>
+          <li> Opcionalmente, podemos hacer la separación y ordenamiento de las sublistas en una única operación.</li>
+        </ul>
+      </li>
+      <li> <strong>SRP</strong> Refactoriza a métodos privados cualquier elemento de lógica complicada. De este modo, si cambiamos la estrategia no deberemos modificar el cuerpo de la función principal.
 
-![imagen](https://picsum.photos/200/300)
+         <ul>
+           <li> La asignación del pivote puede no ser clara en una primera lectura</li>
+           <li> Opcionalmente, si usaste programación funcional para filtrar la lista, puedes extraer la lógica a una HOF para mejorar la legibilidad</li>
+         </ul>
+     </li>
+  </ol>
 
+  <p>
+    Si aplicamos todo esto, el resultado final será el siguiente:
+
+```java
+package com.example.BP.retos;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+public class QuickSortAlgorithm {
+
+    private QuickSortAlgorithm() {
+    }
+
+    public static List<Number> sort(List<Number> listaOriginal ) {
+
+        if(listaOriginal.size() < 2){
+            return listaOriginal;
+        }
+
+        double pivote = calcularPivote(listaOriginal);
+
+        List<Number> elementosMenoresOrdenados =  sort(filtrar(listaOriginal, n -> n.doubleValue() < pivote));
+        List<Number> elementosMayoresOrdenados =  sort(filtrar(listaOriginal, n -> n.doubleValue() >= pivote));
+
+        List<Number> listaOrdenada = new ArrayList<>(elementosMenoresOrdenados);
+        listaOrdenada.addAll(elementosMayoresOrdenados);
+
+        return listaOrdenada;
+    }
+
+    private static Double calcularPivote(List<Number> listaOriginal) {
+        final double primerElemento = listaOriginal.get(listaOriginal.size() - 1).doubleValue();
+        final double ultimoElemento = listaOriginal.get(0).doubleValue();
+
+        return (primerElemento + ultimoElemento) / 2;
+    }
+
+    private static List<Number> filtrar(List<Number> lista, Predicate<Number> predicate){
+        return lista.stream().filter(predicate).collect(Collectors.toList());
+    }
+}
+
+```
+
+
+  </p>
+
+
+</details>
