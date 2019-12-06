@@ -1,7 +1,7 @@
 ## Reto 01
 
 ### OBJETIVO
-- Usar las interfaces propias de Jva para poder realizar la convrsión de un objeto de tipo **String** a un objeto de tipo **Integer**.
+- Usar las interfaces propias de Java para poder realizar la conversión de un objeto de tipo **String** a un objeto de tipo **Integer**.
 
 En el Ejemplo 1 creamos nuestra propia interfaz para convertir un `String` en un entero. Reemplaza esta interfaz propia por una de las genéricas que proporciona Java. 
 
