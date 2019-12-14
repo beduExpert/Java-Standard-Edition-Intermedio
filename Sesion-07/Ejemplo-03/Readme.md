@@ -87,7 +87,7 @@
 
 5. Una vez terminado lo ejecutamos y abrimos postman y colocamos la informacion como se ve en la imagen:
 
-    ![Postman](../img/post2.PNG)
+    ![Postman](img/post2.PNG)
 
 
 6. Damos click en Send y se mostrara en consola la informacion que colocamos en nuestro EmpoleadoRepository
