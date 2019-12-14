@@ -37,7 +37,7 @@
 
 4. Una vez terminado lo ejecutamos y abrimos postman y colocamos la informacion como se ve en la imagen:
 
-    ![Postman](../img/post.PNG)
+    ![Postman](img/post.PNG)
 
 
 5. Damos click en Send y se mostrara en consola la informacion que enviamos
